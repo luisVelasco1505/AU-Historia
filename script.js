@@ -1,17 +1,44 @@
-const botonMostrar = document.getElementById("mostrarMas");
-const contenidoOculto = document.getElementById("contenidoOculto");
-const botonEscena = document.getElementById("cambiarEscena");
+const musica = document.getElementById("musicaFondo");
+const botonMusica = document.getElementById("toggleMusica");
 
-botonMostrar.addEventListener("click", () => {
-    if (contenidoOculto.style.display === "block") {
-        contenidoOculto.style.display = "none";
-        botonMostrar.textContent = "Mostrar más";
-    } else {
-        contenidoOculto.style.display = "block";
-        botonMostrar.textContent = "Mostrar menos";
-    }
+let musicaActiva = false;
+
+/* volumen inicial */
+musica.volume = 0.1;
+
+/* botón para activar o pausar música */
+botonMusica.addEventListener("click", () => {
+
+  if (musicaActiva) {
+    musica.pause();
+    botonMusica.textContent = "Activar música";
+    musicaActiva = false;
+
+  } else {
+    musica.play()
+      .then(() => {
+        botonMusica.textContent = "Pausar música";
+        musicaActiva = true;
+      })
+      .catch(() => {
+        console.log("El navegador bloqueó el autoplay");
+      });
+  }
+
 });
 
-botonEscena.addEventListener("click", () => {
-    document.body.classList.toggle("tema-alterno");
-});
+/* iniciar música al primer clic en la página */
+document.addEventListener("click", () => {
+
+  if (!musicaActiva) {
+
+    musica.play()
+      .then(() => {
+        botonMusica.textContent = "Pausar música";
+        musicaActiva = true;
+      })
+      .catch(() => {});
+
+  }
+
+}, { once: true });
