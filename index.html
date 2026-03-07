@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AU-Historia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Título de la historia</h1>
+    <p class="subtitulo">Subtítulo o contexto general</p>
+    <button id="cambiarEscena">Cambiar escena</button>
+  </header>
+
+  <main>
+    <section class="galeria">
+      <img src="img/imagen1.jpg" alt="Descripción de la imagen 1">
+      <img src="img/imagen2.jpg" alt="Descripción de la imagen 2">
+      <img src="img/imagen3.jpg" alt="Descripción de la imagen 3">
+      <img src="img/imagen4.jpg" alt="Descripción de la imagen 4">
+      <img src="img/imagen5.jpg" alt="Descripción de la imagen 5">
+    </section>
+
+    <section class="historia">
+      <article>
+        <h2>Inicio</h2>
+        <p>
+          Aquí irá el inicio de la historia. Este texto es temporal y luego será reemplazado.
+        </p>
+      </article>
+
+      <article>
+        <h2>Desarrollo</h2>
+        <p>
+          Aquí irá el desarrollo de la historia. Este texto también es provisional.
+        </p>
+
+        <button id="mostrarMas">Mostrar más</button>
+        <div id="contenidoOculto" class="oculto">
+          <p>
+            Aquí aparecerá una parte oculta o complementaria de la historia.
+          </p>
+        </div>
+      </article>
+
+      <article>
+        <h2>Desenlace</h2>
+        <p>
+          Aquí irá el desenlace de la historia una vez lo definamos.
+        </p>
+      </article>
+    </section>
+
+    <section class="multimedia">
+      <h2>Recursos multimedia</h2>
+
+      <div class="contenedor-media">
+        <div class="media-card">
+          <p>Audio o video 1</p>
+          <audio controls>
+            <source src="media/audio1.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
+        </div>
+
+        <div class="media-card">
+          <p>Audio o video 2</p>
+          <audio controls>
+            <source src="media/audio2.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
+        </div>
+
+        <div class="media-card">
+          <p>Audio o video 3</p>
+          <audio controls>
+            <source src="media/audio3.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Actividad: Narrando una historia con la web</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
