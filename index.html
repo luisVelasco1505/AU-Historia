@@ -1,52 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Archivo Sombra - Brothers Home</title>
-
   <link rel="stylesheet" href="styles.css">
-
 </head>
-
-
-
 <body>
-
+  <!-- Hero principal -->
   <header class="hero">
-
     <h1>Brothers Home</h1>
-    <h1>historia real detrás de la desigualdad que inspiró El Juego del Calamar</h1>
-
-    <p class="subtitulo"> Un caso real que muestra cómo la explotación y la desigualdad pueden superar incluso a la
-      ficción.</p>
-
-    <button id="cambiarEscena">Cambiar ambiente</button>
-    <button id="toggleMusica">Activar música</button>
-
+    <h1>Historia real detras de la desigualdad que inspiro El Juego del Calamar</h1>
+    <p class="subtitulo">
+      Un caso real que muestra como la explotacion y la desigualdad pueden superar incluso a la ficcion.
+    </p>
+    <div class="acciones-hero">
+      <button id="cambiarEscena" type="button">Cambiar ambiente</button>
+      <button id="toggleMusica" type="button">Activar musica</button>
+    </div>
   </header>
 
+  <!-- Audio de ambiente -->
   <audio id="musicaFondo" loop>
     <source src="media/audio_intro.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
 
   <main>
-
-    <!-- GALERÍA -->
-    <section class="galeria">
-      <img src="img/archivos_historicos.png" alt="Fotografía histórica del lugar">
+    <!-- Galeria -->
+    <section class="galeria" aria-label="Imagenes historicas">
+      <img src="img/archivos_historicos.png" alt="Fotografia historica del lugar">
       <img src="img/BrothersHomeBusan.jpeg" alt="Instalaciones de Brothers Home">
-      <img src="img/reclutando_niños.webp" alt="Investigación del caso Brothers Home">
+      <img src="img/reclutando_ninos.webp" alt="Investigacion del caso Brothers Home">
     </section>
 
-
-    <!-- INTRODUCCIÓN -->
-    <section class="historia">
+    <!-- Narrativa principal -->
+    <section class="historia" aria-label="Relato historico">
       <article>
-        <h2>Introducción</h2>
+        <h2>Introduccion</h2>
         <p>
           En 2021 millones de personas quedaron impactadas al ver la serie
           <strong>El juego del calamar</strong>.
@@ -54,8 +45,8 @@
           mientras millonarios observan desde las sombras.
         </p>
         <p>
-          Pero décadas antes de que esa serie existiera, en Corea del Sur ocurrió
-          un caso real que mostró cómo la desesperación, el poder y la desigualdad
+          Pero decadas antes de que esa serie existiera, en Corea del Sur ocurrio
+          un caso real que mostro como la desesperacion, el poder y la desigualdad
           pueden crear sistemas profundamente injustos.
         </p>
         <p>
@@ -63,83 +54,72 @@
         </p>
       </article>
 
-
-      <!-- EL INICIO -->
       <article>
         <h2>El inicio de un sistema oscuro</h2>
         <p>
-          Durante las décadas de 1970 y 1980 Corea del Sur atravesaba
-          un periodo de transformación económica.
+          Durante las decadas de 1970 y 1980 Corea del Sur atravesaba
+          un periodo de transformacion economica.
           Las autoridades buscaban mostrar una imagen de orden y progreso.
         </p>
         <p>
-          Para lograrlo, muchas personas consideradas “indeseables”
+          Para lograrlo, muchas personas consideradas "indeseables"
           fueron retiradas de las calles.
         </p>
-        <button id="mostrarMas">
-          Revelar archivo clasificado
-        </button>
+        <button id="mostrarMas" type="button">Revelar archivo clasificado</button>
         <div id="contenidoOculto" class="oculto">
           <p>
-            Entre ellas había personas sin hogar, huérfanos,
+            Entre ellas habia personas sin hogar, huerfanos,
             personas con discapacidad y trabajadores pobres.
             Muchas de estas personas fueron detenidas sin haber cometido delitos
-            y enviadas a centros de detención llamados
-            “instituciones de bienestar”.
+            y enviadas a centros de detencion llamados
+            "instituciones de bienestar".
           </p>
           <p>
-            Uno de los más grandes fue <strong>Brothers Home</strong>,
+            Uno de los mas grandes fue <strong>Brothers Home</strong>,
             ubicado en la ciudad de Busan.
           </p>
         </div>
       </article>
 
-
-      <!-- LO QUE OCURRÍA DENTRO -->
       <article>
-        <h2>Lo que ocurría dentro</h2>
+        <h2>Lo que ocurria dentro</h2>
         <p>
           Oficialmente Brothers Home era presentado como un centro de ayuda social.
           Sin embargo, testimonios de sobrevivientes describen
           una realidad completamente diferente.
         </p>
         <p>
-          Miles de personas vivían en condiciones difíciles
+          Miles de personas vivian en condiciones dificiles
           y eran obligadas a realizar trabajos forzados.
         </p>
         <p>
-          Durante años el lugar funcionó prácticamente sin supervisión
-          ni control público.
+          Durante anos el lugar funciono practicamente sin supervision
+          ni control publico.
         </p>
       </article>
 
-
-      <!-- LAS VÍCTIMAS -->
       <article>
-        <h2>Miles de víctimas</h2>
+        <h2>Miles de victimas</h2>
         <p>
-          Investigaciones posteriores revelaron que más de
+          Investigaciones posteriores revelaron que mas de
           <strong>38.000 personas</strong> pasaron por Brothers Home.
         </p>
         <p>
-          Entre ellas había niños, adolescentes y adultos
+          Entre ellas habia ninos, adolescentes y adultos
           que simplemente fueron detenidos en las calles.
         </p>
         <p>
-          El caso finalmente salió a la luz pública en
+          El caso finalmente salio a la luz publica en
           <strong>1987</strong>,
-          generando uno de los mayores escándalos sociales
+          generando uno de los mayores escandalos sociales
           en la historia moderna de Corea del Sur.
         </p>
       </article>
 
-
-      <!-- RELACIÓN CON SQUID GAME -->
-
       <article>
-        <h2>La inquietante conexión con El Juego del Calamar</h2>
+        <h2>La inquietante conexion con El Juego del Calamar</h2>
         <p>
-          Aunque la serie de Netflix no está basada directamente
+          Aunque la serie de Netflix no esta basada directamente
           en Brothers Home,
           ambas historias muestran una realidad inquietante:
           personas vulnerables atrapadas en sistemas injustos.
@@ -155,20 +135,18 @@
           cada aspecto de sus vidas.
         </p>
         <p>
-          Ambas historias nos obligan a enfrentar una pregunta incómoda:
+          Ambas historias nos obligan a enfrentar una pregunta incomoda:
         </p>
         <p>
           <strong>
-            ¿Qué ocurre cuando la sociedad deja de ver
+            Que ocurre cuando la sociedad deja de ver
             a algunas personas como seres humanos?
           </strong>
         </p>
       </article>
 
-
-      <!-- CIERRE -->
       <article>
-        <h2>Un recordatorio incómodo</h2>
+        <h2>Un recordatorio incomodo</h2>
         <p>
           Hoy Brothers Home sigue siendo recordado
           como un episodio oscuro en la historia
@@ -177,45 +155,54 @@
         <p>
           Aunque muchas personas nunca escucharon
           hablar de este caso,
-          su historia demuestra que la explotación
-          de los más vulnerables no es solo un tema
-          de ficción.
+          su historia demuestra que la explotacion
+          de los mas vulnerables no es solo un tema
+          de ficcion.
         </p>
         <p>
-          A veces la realidad puede ser más perturbadora
-          que cualquier serie o película.
+          A veces la realidad puede ser mas perturbadora
+          que cualquier serie o pelicula.
         </p>
       </article>
     </section>
 
-
-    <!-- MULTIMEDIA -->
-    <section class="multimedia">
+    <!-- Bloque multimedia -->
+    <section class="multimedia" aria-label="Documentales">
       <h2 class="titulo-video">Documentales sobre Brothers Home</h2>
       <div class="videos">
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/MqMxG5SEGak" title="Video 1" frameborder="0" allowfullscreen>
+          <iframe
+            src="https://www.youtube.com/embed/MqMxG5SEGak"
+            title="Documental 1"
+            loading="lazy"
+            allowfullscreen>
           </iframe>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/ZZUX-t7voK4" title="Video 2" frameborder="0" allowfullscreen>
+          <iframe
+            src="https://www.youtube.com/embed/ZZUX-t7voK4"
+            title="Documental 2"
+            loading="lazy"
+            allowfullscreen>
           </iframe>
         </div>
         <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/to8ALIhAUJg" title="Video 3" frameborder="0" allowfullscreen>
+          <iframe
+            src="https://www.youtube.com/embed/to8ALIhAUJg"
+            title="Documental 3"
+            loading="lazy"
+            allowfullscreen>
           </iframe>
         </div>
       </div>
     </section>
   </main>
 
-
   <footer>
-    <p>Proyecto académico — Narrando una historia con la web</p>
-    <p>Investigación basada en hechos históricos y análisis cultural</p>
-
+    <p>Proyecto academico - Narrando una historia con la web</p>
+    <p>Investigacion basada en hechos historicos y analisis cultural</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
-
 </html>
