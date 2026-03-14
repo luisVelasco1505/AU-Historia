@@ -1,19 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archivo Sombra - Brothers Home</title>
+  <title>Estacion #9</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Hero principal -->
   <header class="hero">
-    <h1>Brothers Home</h1>
-    <h1>Historia real detras de la desigualdad que inspiro El Juego del Calamar</h1>
-    <p class="subtitulo">
-      Un caso real que muestra como la explotacion y la desigualdad pueden superar incluso a la ficcion.
-    </p>
+    <h1>La Estacion 9</h1>
+    <h2>un lugar que no esta en el mapa, pero siempre encuentra pasajeros</h2>
+
+    <!-- cambio de ambiente -->
     <div class="acciones-hero">
       <button id="cambiarEscena" type="button">Cambiar ambiente</button>
       <button id="toggleMusica" type="button">Activar musica</button>
@@ -27,172 +26,136 @@
   </audio>
 
   <main>
-    <!-- Galeria -->
-    <section class="galeria" aria-label="Imagenes historicas">
-      <img src="img/archivos_historicos.png" alt="Fotografia historica del lugar">
-      <img src="img/BrothersHomeBusan.jpeg" alt="Instalaciones de Brothers Home">
-      <img src="img/reclutando_ninos.webp" alt="Investigacion del caso Brothers Home">
-    </section>
-
     <!-- Narrativa principal -->
-    <section class="historia" aria-label="Relato historico">
-      <article>
-        <h2>Introduccion</h2>
-        <p>
-          En 2021 millones de personas quedaron impactadas al ver la serie
-          <strong>El juego del calamar</strong>.
-          Una historia donde personas desesperadas participan en juegos crueles
-          mientras millonarios observan desde las sombras.
-        </p>
-        <p>
-          Pero decadas antes de que esa serie existiera, en Corea del Sur ocurrio
-          un caso real que mostro como la desesperacion, el poder y la desigualdad
-          pueden crear sistemas profundamente injustos.
-        </p>
-        <p>
-          Ese lugar fue conocido como <strong>Brothers Home</strong>.
-        </p>
-      </article>
+    <section class="historia" aria-label="Relato ficcion">
+      <section class="etapa" aria-labelledby="etapa-inicio">
+        <h2 id="etapa-inicio" class="etapa-titulo">Inicio</h2>
+        <article>
+          <h3>Mapa del metro</h3>
+          <p>
+            Siempre han existido mapas de las lineas de las estaciones del metro. Igual en Luxus, un pueblo pequeno donde
+            todos los mapas terminaban en la estacion numero 8. Siempre fue asi y nadie tenia dudas ni razones para dudar
+            de ello. Ademas, los tableros que indicaban el numero de estaciones coincidian con la cantidad indicada en el
+            mapa. Luis, el guardia nocturno, llevaba quince anos trabajando en el metro y habia visto muchas cosas que
+            pasaban durante sus turnos matutinos. Habia visto ratas enormes, apagones repentinos, borrachos tirados en
+            los pasillos y muchas otras cosas que, para ese tiempo que llevaba, le resultaban muy cotidianas de ver, pero
+            lo que no imaginaba era que el turno de esa noche seria especial.
+          </p>
+        </article>
 
-      <article>
-        <h2>El inicio de un sistema oscuro</h2>
-        <p>
-          Durante las decadas de 1970 y 1980 Corea del Sur atravesaba
-          un periodo de transformacion economica.
-          Las autoridades buscaban mostrar una imagen de orden y progreso.
-        </p>
-        <p>
-          Para lograrlo, muchas personas consideradas "indeseables"
-          fueron retiradas de las calles.
-        </p>
-        <button id="mostrarMas" type="button">Revelar archivo clasificado</button>
-        <div id="contenidoOculto" class="oculto">
-          <p>
-            Entre ellas habia personas sin hogar, huerfanos,
-            personas con discapacidad y trabajadores pobres.
-            Muchas de estas personas fueron detenidas sin haber cometido delitos
-            y enviadas a centros de detencion llamados
-            "instituciones de bienestar".
-          </p>
-          <p>
-            Uno de los mas grandes fue <strong>Brothers Home</strong>,
-            ubicado en la ciudad de Busan.
-          </p>
+        <div class="imagenes-inicio">
+          <img src="img/metro.jpg" alt="Estacion del metro numero 9">
+          <img src="img/mapa.jpg" alt="Mapa del metro con estaciones">
         </div>
-      </article>
+      </section>
 
-      <article>
-        <h2>Lo que ocurria dentro</h2>
-        <p>
-          Oficialmente Brothers Home era presentado como un centro de ayuda social.
-          Sin embargo, testimonios de sobrevivientes describen
-          una realidad completamente diferente.
-        </p>
-        <p>
-          Miles de personas vivian en condiciones dificiles
-          y eran obligadas a realizar trabajos forzados.
-        </p>
-        <p>
-          Durante anos el lugar funciono practicamente sin supervision
-          ni control publico.
-        </p>
-      </article>
+      <!-- seccion desarrollo de la historia -->
+      <section class="etapa" aria-labelledby="etapa-desarrollo">
+        <h2 id="etapa-desarrollo" class="etapa-titulo">Desarrollo</h2>
+        <article>
+          <h3>El ultimo tren</h3>
+          <p>
+            Esa noche Luis vio el ultimo tren que arribaba a la estacion 8. El tren se detuvo, abrio sus puertas y
+            bajo un viejo pasajero que parecia no haber visto nunca antes. Vestia ropas como de un guardia, pero con
+            un uniforme muy antiguo. Este se le acerco y le dijo con una voz muy cansada y tenue: "Jamas te acerques al
+            siguiente tren". La persona se alejo lentamente sin mencionar nada mas, desapareciendo en la oscuridad de
+            la noche. Luis penso que se trataba de un pasajero ebrio, como de costumbre. Y aunque sintio una situacion
+            extrana en el ambiente, esta se le paso con una breve sacudida de manos, ya que sabia que ese era el ultimo
+            tren de la noche. Habia pasado media hora desde que habia visto al extrano pasajero cuando vio a lo
+            lejos unas luces como las de un tren acercandose a la estacion, y penso: "Que raro, el ultimo tren ya paso
+            hace rato". Pero no le dio mucha importancia hasta que se dio cuenta de que el tren se detenia en la estacion
+            y que las puertas se abrian. De ellas bajaba un grupo de personas con ropas muy viejas y desgastadas.
+            Parecian ser trabajadores del metro de hace muchos anos atras, y aunque parecian estar perdidos y
+            confundidos, no mostraban miedo ni sorpresa por estar en ese lugar. Simplemente caminaban sin rumbo
+            fijo por la estacion. Luis se acerco a ellos para preguntarles si necesitaban ayuda o algo, pero
+            ninguno de ellos le respondio ni siquiera lo miro. Simplemente siguieron caminando sin decir nada.
+            Luis se quedo parado por unos segundos y noto que el tren lucia muy viejo y desgastado, asi que decidio
+            acercarse para ver si podia hablar con el conductor.
+          </p>
 
-      <article>
-        <h2>Miles de victimas</h2>
-        <p>
-          Investigaciones posteriores revelaron que mas de
-          <strong>38.000 personas</strong> pasaron por Brothers Home.
-        </p>
-        <p>
-          Entre ellas habia ninos, adolescentes y adultos
-          que simplemente fueron detenidos en las calles.
-        </p>
-        <p>
-          El caso finalmente salio a la luz publica en
-          <strong>1987</strong>,
-          generando uno de los mayores escandalos sociales
-          en la historia moderna de Corea del Sur.
-        </p>
-      </article>
+          <button id="mostrarMas" type="button">Revelar archivo clasificado</button>
+          <div id="contenidoOculto" class="oculto">
+            <div class="imagenes-desarrollo">
+              <img src="img/guardia.jpg" alt="Archivo clasificado 1">
+              <img src="img/ultimos-pasajeros-tren.jpg" alt="Archivo clasificado 2">
+              <img src="img/arribada-ultimo-tren.jpg" alt="Archivo clasificado 3">
+            </div>
+            <p>
+              Las imagenes que se muestran son reales: se trata de la ultima imagen del guardia con vida durante su turno
+              nocturno matutino. Ademas, se presenta la imagen de los pasajeros del ultimo tren, donde se ven como zombis,
+              y por ultimo se muestra la imagen del ultimo tren llegando a la estacion #8 con su aspecto viejo y desgastado.
+            </p>
+          </div>
+        </article>
+      </section>
 
-      <article>
-        <h2>La inquietante conexion con El Juego del Calamar</h2>
-        <p>
-          Aunque la serie de Netflix no esta basada directamente
-          en Brothers Home,
-          ambas historias muestran una realidad inquietante:
-          personas vulnerables atrapadas en sistemas injustos.
-        </p>
-        <p>
-          En <strong>El juego del calamar</strong> los participantes
-          son personas endeudadas que aceptan competir
-          en juegos crueles para sobrevivir.
-        </p>
-        <p>
-          En Brothers Home miles de personas fueron encerradas
-          sin poder escapar de un sistema que controlaba
-          cada aspecto de sus vidas.
-        </p>
-        <p>
-          Ambas historias nos obligan a enfrentar una pregunta incomoda:
-        </p>
-        <p>
-          <strong>
-            Que ocurre cuando la sociedad deja de ver
-            a algunas personas como seres humanos?
-          </strong>
-        </p>
-      </article>
-
-      <article>
-        <h2>Un recordatorio incomodo</h2>
-        <p>
-          Hoy Brothers Home sigue siendo recordado
-          como un episodio oscuro en la historia
-          de Corea del Sur.
-        </p>
-        <p>
-          Aunque muchas personas nunca escucharon
-          hablar de este caso,
-          su historia demuestra que la explotacion
-          de los mas vulnerables no es solo un tema
-          de ficcion.
-        </p>
-        <p>
-          A veces la realidad puede ser mas perturbadora
-          que cualquier serie o pelicula.
-        </p>
-      </article>
+      <!-- seccion de desenlace -->
+      <section class="etapa" aria-labelledby="etapa-desenlace">
+        <h2 id="etapa-desenlace" class="etapa-titulo">Desenlace</h2>
+        <article>
+          <h3>El amanecer</h3>
+          <p>
+            Antes de llegar a la cabina del conductor, el tren cerro las puertas y comenzo a avanzar,
+            asi que Luis corrio mas deprisa para llegar donde el conductor estaba. Al llegar, el horror recorrio su cuerpo,
+            pues no habia nadie en la cabina, solo un destino en la pantalla de los controles del tren que decia "Estacion 9".
+          </p>
+          <p>
+            A la manana siguiente, el pueblo desperto con una noticia lamentable: Luis, quien llevaba anos trabajando en la
+            Estacion 8 del tren, habia desaparecido sin dejar rastro alguno. La policia y los habitantes del pueblo comenzaron
+            una larga busqueda, pero jamas fue encontrado. Al revisar las camaras de seguridad, se ve a Luis caminar por las
+            lineas ferroviarias vacias y desaparecer en la oscuridad de la noche para jamas regresar.
+          </p>
+        </article>
+      </section>
     </section>
 
-    <!-- Bloque multimedia -->
-    <section class="multimedia" aria-label="Documentales">
-      <h2 class="titulo-video">Documentales sobre Brothers Home</h2>
+    <!-- evidencias multimedia -->
+    <section class="etapa evidencias" aria-label="evidencias">
+      <h2 id="etapa-evidencias" class="etapa-titulo">Evidencias reales</h2>
+      <div class="contenido-multimedia">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Jot4QcaXaTM?si=v7WBOZYrZPH1YmW4"
+          title="Video evidencia 1"
+          loading="lazy"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/hp8ga9-jSF8?si=VEINjYpNL8EE0LXc"
+          title="Video evidencia 2"
+          loading="lazy"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- bloque multimedia -->
+    <section class="multimedia" aria-label="Audios narrativos de la historia">
+      <h2 class="titulo-video">Audios encontrados en la Estacion #8</h2>
       <div class="videos">
         <div class="video-card">
-          <iframe
-            src="https://www.youtube.com/embed/MqMxG5SEGak"
-            title="Documental 1"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
+          <h3 class="media-subtitulo">Audio del conductor</h3>
+          <audio class="audio-capitulo" controls preload="none">
+            <source src="media/audio-conductor.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
         </div>
+
         <div class="video-card">
-          <iframe
-            src="https://www.youtube.com/embed/ZZUX-t7voK4"
-            title="Documental 2"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-card">
-          <iframe
-            src="https://www.youtube.com/embed/to8ALIhAUJg"
-            title="Documental 3"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
+          <h3 class="media-subtitulo">Audio llegada del ultimo tren</h3>
+          <audio class="audio-capitulo" controls preload="none">
+            <source src="media/Sonido-Tren.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
         </div>
       </div>
     </section>
@@ -200,7 +163,7 @@
 
   <footer>
     <p>Proyecto academico - Narrando una historia con la web</p>
-    <p>Investigacion basada en hechos historicos y analisis cultural</p>
+    <p>Historia ficticia original creada por el equipo del curso</p>
   </footer>
 
   <script src="script.js"></script>

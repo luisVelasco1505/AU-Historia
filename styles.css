@@ -1,27 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Spectral:wght@300;400;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Spectral:wght@300;400;600;700&display=swap");
 
-/* =========================
-   Base y variables de tema
-   ========================= */
+/* estilos para variables globales del tema */
 :root {
   --color-texto: #d8d4cf;
-  --color-texto-suave: #b7b0ab;
   --color-fondo-card: rgba(10, 10, 10, 0.72);
   --color-borde: rgba(255, 255, 255, 0.05);
   --color-acento: #8b0000;
   --sombra-card: 0 0 22px rgba(0, 0, 0, 0.55);
 }
 
+/* estilos para normalizar el layout base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* estilos para el fondo principal y tipografia del sitio */
 body {
   font-family: "Spectral", serif;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.86)),
+    linear-gradient(rgba(136, 136, 136, 0.72), rgba(0, 0, 0, 0.86)),
     url("img/fondo.jpg");
   background-size: cover;
   background-position: center;
@@ -33,9 +32,10 @@ body {
   letter-spacing: 0.5px;
   overflow-x: hidden;
   position: relative;
+  transition: background 0.9s ease, color 0.6s ease, filter 0.5s ease;
 }
 
-/* Capa de atmosfera */
+/* estilos para capa ambiental animada sobre el fondo */
 body::before {
   content: "";
   position: fixed;
@@ -46,8 +46,10 @@ body::before {
     radial-gradient(circle at 20% 40%, rgba(255, 0, 0, 0.05), transparent 40%),
     radial-gradient(circle at 70% 60%, rgba(255, 0, 0, 0.03), transparent 45%);
   animation: niebla 25s infinite alternate linear;
+  transition: opacity 0.7s ease, filter 0.7s ease, background 0.7s ease;
 }
 
+/* estilos para animacion de niebla del fondo */
 @keyframes niebla {
   0% {
     opacity: 0.2;
@@ -60,6 +62,7 @@ body::before {
   }
 }
 
+/* estilos para asegurar que el contenido quede encima de las capas del fondo */
 header,
 main,
 footer {
@@ -67,17 +70,16 @@ footer {
   z-index: 1;
 }
 
-/* =========
-   Hero
-   ========= */
+/* estilos para el encabezado principal de la historia */
 .hero {
   text-align: center;
   padding: 80px 20px 60px;
-  background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(rgba(112, 112, 112, 0.82), rgba(0, 0, 0, 0.9));
   border-bottom: 1px solid var(--color-borde);
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
 }
 
+/* estilos para el titulo principal del hero */
 .hero h1 {
   font-family: "Creepster", cursive;
   font-size: 3.4rem;
@@ -87,14 +89,16 @@ footer {
   margin-bottom: 14px;
 }
 
-.subtitulo {
-  max-width: 820px;
-  margin: 0 auto 24px;
-  color: var(--color-texto-suave);
-  font-style: italic;
-  font-size: 1.05rem;
+/* estilos para subtitulo contextual del hero */
+.hero h2 {
+  max-width: 920px;
+  margin: 0 auto 14px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #e2d7d2;
 }
 
+/* estilos para contenedor de botones de accion superior */
 .acciones-hero {
   display: flex;
   justify-content: center;
@@ -102,11 +106,9 @@ footer {
   flex-wrap: wrap;
 }
 
-/* =========
-   Botones
-   ========= */
+/* estilos para botones globales del sitio */
 button {
-  background: #2b0000;
+  background: #6e1414;
   color: #f3e9e9;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 12px 22px;
@@ -118,43 +120,14 @@ button {
   box-shadow: 0 0 12px rgba(255, 0, 0, 0.25);
 }
 
+/* estilos para estado hover de botones */
 button:hover {
   background: #5a0000;
   transform: scale(1.04);
   box-shadow: 0 0 18px rgba(255, 0, 0, 0.4);
 }
 
-/* =========
-   Galeria
-   ========= */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 40px;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.galeria img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 10px;
-  filter: grayscale(30%) brightness(0.6);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
-}
-
-.galeria img:hover {
-  filter: grayscale(0) brightness(0.82);
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
-}
-
-/* =====================
-   Linea de investigacion
-   ===================== */
+/* estilos para la linea principal de la historia */
 .historia {
   max-width: 950px;
   margin: 10px auto 0;
@@ -162,6 +135,22 @@ button:hover {
   border-left: 3px solid #700000;
 }
 
+/* estilos para cada bloque de etapa (inicio, desarrollo, desenlace) */
+.etapa {
+  margin-bottom: 28px;
+}
+
+/* estilos para titulos de etapa */
+.etapa-titulo {
+  font-size: 1.95rem;
+  margin: 10px 0 16px;
+  color: #f2e9e4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.18);
+}
+
+/* estilos para cada tarjeta de articulo narrativo */
 .historia article {
   position: relative;
   margin-bottom: 35px;
@@ -173,6 +162,7 @@ button:hover {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* estilos para punto decorativo lateral de cada articulo */
 .historia article::before {
   content: "";
   position: absolute;
@@ -182,36 +172,41 @@ button:hover {
   height: 14px;
   border-radius: 50%;
   background: var(--color-acento);
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.35);
+  box-shadow: 0 0 10px rgb(255, 0, 0);
 }
 
+/* estilos para hover de tarjetas narrativas */
 .historia article:hover {
   transform: translateY(-4px);
-  border-color: rgba(157, 2, 8, 0.45);
+  border-color: rgb(155, 43, 46);
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.65), 0 0 10px rgba(157, 2, 8, 0.15);
 }
 
-.historia h2 {
-  font-size: 1.7rem;
+/* estilos para subtitulos internos de los articulos */
+.historia h3 {
+  font-size: 1.4rem;
   margin-bottom: 12px;
   color: #f0e6e1;
   text-shadow: 0 0 6px rgba(255, 0, 0, 0.18);
 }
 
+/* estilos para parrafos de contenido narrativo */
 .historia p {
   margin-bottom: 14px;
   font-size: 1.02rem;
 }
 
+/* estilos para remover margen del ultimo parrafo en cada bloque */
 .historia p:last-child {
   margin-bottom: 0;
 }
 
-/* Estado oculto usado por JS para desplegar el bloque clasificado */
+/* estilos para el contenido oculto que se abre con javascript */
 .oculto {
   display: none;
 }
 
+/* estilos para panel clasificado cuando se revela */
 #contenidoOculto {
   margin-top: 20px;
   padding: 18px;
@@ -221,6 +216,7 @@ button:hover {
   animation: aparecer 0.8s ease;
 }
 
+/* estilos para animacion de entrada del contenido oculto */
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -233,15 +229,105 @@ button:hover {
   }
 }
 
-/* =========
-   Multimedia
-   ========= */
+/* estilos para la galeria de imagenes del inicio */
+.imagenes-inicio {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* estilos para imagenes del inicio */
+.imagenes-inicio img {
+  width: calc(50% - 8px);
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: grayscale(30%) brightness(0.6);
+  box-shadow: 0 0 20px rgb(255, 251, 0);
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* estilos para hover de imagenes del inicio */
+.imagenes-inicio img:hover {
+  filter: grayscale(0) brightness(0.82);
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgb(255, 0, 0);
+}
+
+/* estilos para la galeria de imagenes del desarrollo */
+.imagenes-desarrollo {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* estilos para imagenes del desarrollo */
+.imagenes-desarrollo img {
+  width: calc(50% - 8px);
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: grayscale(30%) brightness(0.6);
+  box-shadow: 0 0 20px rgb(252, 172, 0);
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* estilos para hover de imagenes del desarrollo */
+.imagenes-desarrollo img:hover {
+  filter: grayscale(0) brightness(0.82);
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgb(255, 0, 0);
+}
+
+/* estilos para la seccion evidencias multimedia del desarrollo */
+.evidencias {
+  max-width: 1200px;
+  margin: 10px auto 20px;
+  padding: 10px 40px 20px;
+}
+
+/* estilos para centrar el titulo principal de evidencias */
+.evidencias .etapa-titulo {
+  text-align: center;
+}
+
+/* estilos para distribuir los videos en grid */
+.contenido-multimedia {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* estilos para iframes de videos de youtube */
+.contenido-multimedia iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(8, 8, 8, 0.72);
+  box-shadow: 0 0 24px rgb(255, 0, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.9);
+}
+
+/* estilos para hover de videos en evidencias */
+.contenido-multimedia iframe:hover {
+  transform: translateY(-4px) scale(1.01);
+  filter: brightness(1);
+  box-shadow: 0 0 28px rgba(181, 0, 236, 0.966);
+}
+
+/* estilos para bloque de audios narrativos */
 .multimedia {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 40px 50px;
 }
 
+/* estilos para titulo del bloque multimedia */
 .titulo-video {
   text-align: center;
   margin-bottom: 24px;
@@ -250,6 +336,7 @@ button:hover {
   text-shadow: 0 0 6px rgba(255, 0, 0, 0.15);
 }
 
+/* estilos para grilla flexible de tarjetas de audio */
 .videos {
   display: flex;
   justify-content: center;
@@ -257,29 +344,38 @@ button:hover {
   flex-wrap: wrap;
 }
 
+/* estilos para cada tarjeta del bloque multimedia */
 .video-card {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  padding: 18px;
+  background: rgb(0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 25px rgb(4, 3, 80);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.video-card iframe {
-  width: min(420px, 92vw);
-  aspect-ratio: 16 / 9;
-  height: auto;
-  display: block;
-  border: 0;
+/* estilos para subtitulo de cada capitulo de audio */
+.media-subtitulo {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #e7ddd7;
 }
 
+/* estilos para reproductor de audio embebido */
+.audio-capitulo {
+  width: min(420px, 92vw);
+  display: block;
+  border-radius: 8px;
+}
+
+/* estilos para hover en tarjetas multimedia */
 .video-card:hover {
   transform: scale(1.03);
   box-shadow: 0 0 35px rgba(120, 0, 0, 0.5);
 }
 
-/* =========
-   Footer
-   ========= */
+/* estilos para pie de pagina */
 footer {
   text-align: center;
   padding: 25px 20px;
@@ -289,27 +385,55 @@ footer {
   font-size: 0.95rem;
 }
 
-/* =======================
-   Tema alterno (JS toggle)
-   ======================= */
+/* estilos para modo alterno activado con javascript */
 .tema-alterno {
   background:
-    linear-gradient(rgba(10, 0, 0, 0.7), rgba(0, 0, 0, 0.88)),
-    radial-gradient(circle at center, #1a0000 0%, #070000 60%, #000000 100%);
+    linear-gradient(rgba(5, 0, 18, 0.74), rgba(0, 0, 0, 0.94)),
+    radial-gradient(circle at 50% 20%, #16213e 0%, #0d0f1f 45%, #050508 100%);
   color: #f0e8e8;
+  filter: saturate(1.2) contrast(1.06);
 }
 
+/* estilos para encabezado en modo alterno */
+.tema-alterno .hero {
+  background: linear-gradient(rgba(3, 6, 20, 0.9), rgba(2, 2, 10, 0.95));
+}
+
+/* estilos para titulo principal en modo alterno */
 .tema-alterno .hero h1 {
-  text-shadow: 0 0 12px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.5);
+  text-shadow: 0 0 12px rgba(110, 173, 255, 0.75), 0 0 32px rgba(84, 126, 224, 0.55);
 }
 
+/* estilos para tarjetas narrativas en modo alterno */
 .tema-alterno .historia article {
-  background: rgba(25, 0, 0, 0.78);
+  background: rgba(10, 20, 45, 0.78);
+  border-color: rgba(112, 165, 255, 0.35);
 }
 
-/* =========
-   Responsive
-   ========= */
+/* estilos para marcador lateral de tarjetas en modo alterno */
+.tema-alterno .historia article::before {
+  background: #4f7ed5;
+  box-shadow: 0 0 12px rgba(95, 161, 255, 0.45);
+}
+
+/* estilos para hover de evidencias en modo alterno */
+.tema-alterno .contenido-multimedia iframe:hover {
+  box-shadow: 0 0 30px rgba(55, 113, 206, 0.55);
+}
+
+/* estilos para tarjetas multimedia en modo alterno */
+.tema-alterno .video-card {
+  box-shadow: 0 0 35px rgba(55, 113, 206, 0.45);
+}
+
+/* estilos para titulos resaltados en modo alterno */
+.tema-alterno .etapa-titulo,
+.tema-alterno .historia h3,
+.tema-alterno .titulo-video {
+  text-shadow: 0 0 10px rgba(124, 176, 255, 0.32);
+}
+
+/* estilos responsive para tablets y pantallas medianas */
 @media (max-width: 768px) {
   .hero {
     padding: 60px 18px 45px;
@@ -320,18 +444,21 @@ footer {
     letter-spacing: 1.5px;
   }
 
-  .subtitulo {
-    font-size: 0.98rem;
+  .hero h2 {
+    font-size: 1.08rem;
   }
 
-  .galeria,
+  .historia,
+  .evidencias,
   .multimedia {
     padding-left: 20px;
     padding-right: 20px;
   }
 
   .historia {
-    padding: 20px 20px 35px 35px;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    padding-left: 35px;
   }
 
   .historia article {
@@ -344,12 +471,28 @@ footer {
     height: 12px;
   }
 
-  .historia h2,
-  .titulo-video {
+  .historia h3,
+  .titulo-video,
+  .etapa-titulo {
     font-size: 1.45rem;
+  }
+
+  .imagenes-inicio,
+  .imagenes-desarrollo {
+    flex-direction: column;
+  }
+
+  .imagenes-inicio img,
+  .imagenes-desarrollo img {
+    width: 100%;
+  }
+
+  .contenido-multimedia {
+    grid-template-columns: 1fr;
   }
 }
 
+/* estilos responsive para celulares */
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 1.95rem;
@@ -360,11 +503,15 @@ footer {
     max-width: 280px;
   }
 
-  .galeria img {
+  .historia {
+    border-left-width: 2px;
+  }
+
+  .imagenes-inicio img {
     height: 210px;
   }
 
-  .historia {
-    border-left-width: 2px;
+  .imagenes-desarrollo img {
+    height: 180px;
   }
 }

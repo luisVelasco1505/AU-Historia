@@ -1,41 +1,67 @@
-// Referencias principales de la UI
+// referencias de elementos del DOM usados por las interacciones principales
 const musica = document.getElementById("musicaFondo");
 const botonMusica = document.getElementById("toggleMusica");
 const botonEscena = document.getElementById("cambiarEscena");
 const botonMostrarMas = document.getElementById("mostrarMas");
 const contenidoOculto = document.getElementById("contenidoOculto");
 
+// estado interno para saber si el audio de ambiente esta activo
 let musicaActiva = false;
 
 /**
- * Reproduce la musica de fondo y sincroniza estado + texto del boton.
- * Se centraliza para que cualquier cambio futuro afecte a una sola funcion.
+ * Actualiza el texto del boton de musica segun el estado actual.
+ * Centralizar este cambio evita repetir strings en varias funciones.
+ */
+function actualizarTextoBotonMusica() {
+  if (!botonMusica) {
+    return;
+  }
+
+  botonMusica.textContent = musicaActiva ? "Pausar musica" : "Activar musica";
+}
+
+/**
+ * Intenta reproducir el audio de ambiente.
+ * Si el navegador bloquea la reproduccion, deja un mensaje visible en el boton.
  */
 function iniciarMusica() {
+  if (!musica || !botonMusica) {
+    return Promise.resolve();
+  }
+
   return musica
     .play()
     .then(() => {
       musicaActiva = true;
-      botonMusica.textContent = "Pausar musica";
+      actualizarTextoBotonMusica();
     })
     .catch(() => {
-      console.log("El navegador bloqueo la reproduccion automatica.");
+      botonMusica.textContent = "No se pudo reproducir";
+      console.log("No se pudo iniciar el audio de ambiente.");
     });
 }
 
 /**
- * Pausa la musica y restablece el estado visual del boton.
+ * Pausa la pista de ambiente y restaura el estado del boton.
  */
 function pausarMusica() {
+  if (!musica || !botonMusica) {
+    return;
+  }
+
   musica.pause();
   musicaActiva = false;
-  botonMusica.textContent = "Activar musica";
+  actualizarTextoBotonMusica();
 }
 
 /**
- * Alterna reproduccion/pausa desde el boton principal de audio.
+ * Interaccion del boton de musica: alterna entre play y pause.
  */
 function alternarMusica() {
+  if (!musica || !botonMusica) {
+    return;
+  }
+
   if (musicaActiva) {
     pausarMusica();
     return;
@@ -45,18 +71,22 @@ function alternarMusica() {
 }
 
 /**
- * Alterna el tema visual de la pagina agregando o quitando la clase
- * de modo alternativo en el <body>.
+ * Cambia entre el tema normal y el tema alterno.
+ * Esto activa el efecto visual de escena definido en CSS.
  */
 function alternarEscena() {
   document.body.classList.toggle("tema-alterno");
 }
 
 /**
- * Muestra u oculta el bloque narrativo clasificado y actualiza el
- * texto del boton para que el estado sea explicito.
+ * Muestra/oculta el bloque extra del desarrollo
+ * y sincroniza el texto del boton para indicar accion inversa.
  */
 function alternarContenidoClasificado() {
+  if (!contenidoOculto || !botonMostrarMas) {
+    return;
+  }
+
   const estaOculto = contenidoOculto.classList.contains("oculto");
 
   if (estaOculto) {
@@ -70,27 +100,40 @@ function alternarContenidoClasificado() {
 }
 
 /**
- * Configura todos los listeners y estados iniciales.
- * Punto unico de inicializacion para futuras extensiones.
+ * Registra eventos del bloque de audio y define su estado inicial.
+ */
+function configurarAudio() {
+  if (!musica || !botonMusica) {
+    console.log("No se encontro el audio o su boton de control.");
+    return;
+  }
+
+  // volumen suave para que el ambiente no invada el resto del contenido
+  musica.volume = 0.2;
+  actualizarTextoBotonMusica();
+  botonMusica.addEventListener("click", alternarMusica);
+}
+
+/**
+ * Registra eventos de interaccion visual de la pagina.
+ */
+function configurarInteraccionesVisuales() {
+  if (botonEscena) {
+    botonEscena.addEventListener("click", alternarEscena);
+  }
+
+  if (botonMostrarMas && contenidoOculto) {
+    botonMostrarMas.addEventListener("click", alternarContenidoClasificado);
+  }
+}
+
+/**
+ * Punto unico de inicializacion del sitio.
+ * Se separa por modulos para que sea facil extender o depurar.
  */
 function inicializarSitio() {
-  // Volumen base bajo para no interrumpir al entrar.
-  musica.volume = 0.1;
-
-  botonMusica.addEventListener("click", alternarMusica);
-  botonEscena.addEventListener("click", alternarEscena);
-  botonMostrarMas.addEventListener("click", alternarContenidoClasificado);
-
-  // Intenta iniciar musica en la primera interaccion del usuario.
-  document.addEventListener(
-    "click",
-    () => {
-      if (!musicaActiva) {
-        iniciarMusica();
-      }
-    },
-    { once: true }
-  );
+  configurarAudio();
+  configurarInteraccionesVisuales();
 }
 
 inicializarSitio();
